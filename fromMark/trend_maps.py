@@ -11,7 +11,7 @@ and seaward if the computed rate is positive.
 Some places to edit would lie within the get_trend() and plot_timeseries() functions.
 More thought should be put into how each timeseries is sampled/processed.
 In some cases, their are big gaps in time as well as obvious outliers due to faulty
-shoreline delineation, usually due to noise in the source images (clouds, shadows, data gaps, etc).
+shoreline delineation, due to noise in the source images (clouds, shadows, data gaps, etc).
 
 A cool addtion would be a function that takes the geojson from get_trends() and
 constructs the map in an open-source format.
