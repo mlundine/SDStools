@@ -9,8 +9,6 @@ import os
 import shoreline_timeseries_analysis_single as stas
 import shoreline_timeseries_analysis_single_spatial as stasp
 
-
-##This is not functional at all yet but almost
 def main(transect_timeseries_path,
          config_gdf,
          output_folder,
@@ -112,6 +110,7 @@ def main(transect_timeseries_path,
     new_matrix_path = os.path.join(output_folder, 'timeseries_mat_resample.csv')
     new_matrix.to_csv(new_matrix_path)
 
+    return new_matrix_path
     
         
         

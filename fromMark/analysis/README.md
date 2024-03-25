@@ -110,3 +110,31 @@ the timeseries as non-stationary (there is a temporal trend).
 	
 main_df will take as input a pandas dataframe instead of a path to a csv. 
 It will output the result dictionary, the resampled pandas dataframe, and the new spacedelta.
+
+# coastseg_time_and_space_analysis_matrix.py
+
+	def main(transect_timeseries_path,
+			 config_gdf,
+			 output_folder,
+			 transect_spacing,
+			 which_timedelta,
+			 which_spacedelta,
+			 timedelta=None,
+			 spacedelta=None):
+		"""
+		Performs timeseries and spatial series analysis cookbook on each
+		transect in the transect_time_series matrix from CoastSeg
+		inputs:
+		transect_timeseries_path (str): path to the transect_time_series.csv
+		config_gdf_path (str): path to the config_gdf.geojson
+		output_folder (str): path to save outputs to
+		which_timedelta (str): 'minimum' 'average' or 'maximum' or 'custom', this is what the timeseries is resampled at
+		which_spacedelta (str): 'minimum' 'average' or 'maximum' or 'custom', this is the matrix is sampled at in the longshore direction
+		timedelta (str, optional): the custom time spacing (e.g., '30D' is 30 days)
+		beware of choosing minimum, with a mix of satellites, the minimum time spacing can be so low that you run into fourier transform problems
+		spacedelta (int, optional): custom longshore spacing, do not make this finer than the input transect spacing!!!!
+		outputs:
+		new_matrix_path (str): path to the output matrix csv
+		"""
+
+Performs time and space analysis on entire matrix of shoreine data from CoastSeg. Will save a resampled matrix.
