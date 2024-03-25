@@ -163,10 +163,10 @@ def make_shoreline_video(shorelines,
               vid_path,
               frame_rate)
 
-##Sample call
-make_shoreline_video(r'C:\Users\mlundine\OneDrive - DOI\MarkLundine\Data\TestingCoastSeg\mbay_extract1\extracted_shorelines_lines.geojson',
-                     r'C:\Users\mlundine\OneDrive - DOI\MarkLundine\Data\TestingCoastSeg\mbay_extract1\config_gdf.geojson',
-                     r'C:\Users\mlundine\OneDrive - DOI\MarkLundine\Data\TestingCoastSeg\mbay_extract1\transect_time_series.csv',
-                     r'region_8_1557',
-                     'MonterreyTest',
-                     10)
+####Sample call
+##make_shoreline_video(r'extracted_shorelines_lines.geojson',
+##                     r'config_gdf.geojson',
+##                     r'transect_time_series.csv',
+##                     r'region_8_1557',
+##                     'test',
+##                     10)

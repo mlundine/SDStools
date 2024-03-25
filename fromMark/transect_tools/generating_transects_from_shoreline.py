@@ -1,9 +1,19 @@
-from osgeo import ogr
+##import packages
+from osgeo import ogr, gdal
+gdal.UseExceptions() 
 from shapely.geometry import MultiLineString, LineString, Point
 from shapely import wkt
 import sys, math
 import os
+import geopandas as gpd
+import pandas as pd
+import numpy as np
+import shapely
 
+"""
+Needs to be a shapefile for input reference shoreline
+Also the shapefile can only have one line currently
+"""
 ## http://wikicode.wikidot.com/get-angle-of-line-between-two-points
 ## angle between two points
 def getAngle(pt1, pt2):
@@ -28,7 +38,6 @@ def getPoint2(pt, bearing, dist):
     x = pt.x + dist * math.cos(bearing)
     y = pt.y + dist * math.sin(bearing)
     return Point(x, y)
-
 
 def make_transects(input_path,
                    transect_spacing,
@@ -137,4 +146,3 @@ def make_transects(input_path,
 
     del ds
     return output_path
-

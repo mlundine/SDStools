@@ -214,7 +214,7 @@ def get_trends(transect_timeseries_path,
     timeseries_plot_paths = [ ele for ele in timeseries_plot_paths if ele is not None ]
     trend_plot_paths = [ ele for ele in trend_plot_paths if ele is not None ]
     max_slope = np.max(np.abs(slopes))
-    scaled_slopes = (np.array(slopes)/1)*100
+    scaled_slopes = (np.array(slopes)/max_slope)*100
     new_lines = [None]*len(slopes)
     org_crs = transects.crs
     utm_crs = transects.estimate_utm_crs()
