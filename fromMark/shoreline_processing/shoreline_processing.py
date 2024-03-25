@@ -73,20 +73,6 @@ def vertex_filter(shorelines):
     filter_gdf.to_file(new_path)
     return new_path
 
-def arr_to_LineString(coords):
-    """
-    Makes a line feature from a list of xy tuples
-    inputs: coords
-    outputs: line
-    """
-    points = [None]*len(coords)
-    i=0
-    for xy in coords:
-        points[i] = shapely.geometry.Point(xy)
-        i=i+1
-    line = shapely.geometry.LineString(points)
-    return line
-
 def chaikins_corner_cutting(coords, refinements=5):
     """
     Smooths out lines or polygons with Chaikin's method
